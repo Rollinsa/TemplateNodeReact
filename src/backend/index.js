@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors')
 const routerHome = require('./routes/router-home.js');
 const app = express();
- 
+
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -19,4 +21,4 @@ app.use((err, req, res, next) => {
     res.status(500).send("INTERNAL SERVER ERROR");
 });
  
-app.listen(3000)
+app.listen(4000)

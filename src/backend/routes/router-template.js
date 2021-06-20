@@ -5,6 +5,10 @@ routerTemplate.get('/', function (req, res) {
     return res.send('Hello from template router')
 });
 
+routerTemplate.get('/rng', function (req, res) {
+    return res.json({ 'randomNum': Math.random() });
+});
+
 routerTemplate.post('/fakeuser/:userId', function (req, res) {
     const { userId } = req.params;
     console.log(`You passed me ${userId} in the request params`);
